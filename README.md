@@ -10,3 +10,6 @@ WOOOHOOOO!!!
 Yay!
 
 I like pie, like, a lot.
+
+str(waterchemsitry)
+summary(waterchemsitry)
