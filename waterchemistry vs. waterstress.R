@@ -6,3 +6,6 @@ str(waterchem)
 riparian<-read.csv(file="wsamarch2_2009/riparian.csv")
 summary(riparian)
 watershedstress<-read.csv(file="wsamarch2_2009/watershedstressor.csv")
+plot("PAGT~xwatershedstress")
+?merge
+stressandchem<- merge(watershedstress,waterchem)
