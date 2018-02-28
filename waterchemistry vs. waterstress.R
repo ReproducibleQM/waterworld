@@ -28,3 +28,6 @@ plot(stressandchem$RDDENS,stressandchem$COND)
 plot(stressandchem$PAGT,stressandchem$NH4)
 plot(stressandchem$PAGT,stressandchem$NO3)
 
+#Testing Assumptions
+PAGTNH4 <- lm(NH4~PAGT,data=stressandchem)
+shapiro.test(resid(PAGTNH4))
