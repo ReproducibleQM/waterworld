@@ -7,5 +7,19 @@ riparian<-read.csv(file="wsamarch2_2009/riparian.csv")
 summary(riparian)
 watershedstress<-read.csv(file="wsamarch2_2009/watershedstressor.csv")
 plot("PAGT~xwatershedstress")
-?merge
 stressandchem<- merge(watershedstress,waterchem)
+
+
+
+
+
+
+
+
+
+
+
+#plotting x,y from watershed stress and chem merged dataset
+#road miles vs. conductivity
+plot(stressandchem$RDDENS,stressandchem$COND)
+?plot
