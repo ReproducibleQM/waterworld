@@ -9,5 +9,23 @@ watershedstress<-read.csv(file="wsamarch2_2009/watershedstressor.csv")
 plot("PAGT~xwatershedstress")
 ?merge
 stressandchem<- merge(watershedstress,waterchem)
+plot(stressandchem$PAGT,stressandchem$NO3)
+plot(stressandchem$PAGT,stressandchem$NH4)
+
+
+
+
+
+
+
+
+
+
+#plotting x,y from watershed stress and chem merged dataset
+#road miles vs. conductivity
+plot(stressandchem$RDDENS,stressandchem$COND)
+?plot
 plot(stressandchem$PAGT,stressandchem$NH4)
 plot(stressandchem$PAGT,stressandchem$NO3)
+plot(stressandchem$PAGT,stressandchem$NO3)
+
