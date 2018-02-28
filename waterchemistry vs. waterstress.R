@@ -7,7 +7,9 @@ riparian<-read.csv(file="wsamarch2_2009/riparian.csv")
 summary(riparian)
 watershedstress<-read.csv(file="wsamarch2_2009/watershedstressor.csv")
 plot("PAGT~xwatershedstress")
+?merge
 stressandchem<- merge(watershedstress,waterchem)
+
 
 
 
@@ -23,3 +25,6 @@ stressandchem<- merge(watershedstress,waterchem)
 #road miles vs. conductivity
 plot(stressandchem$RDDENS,stressandchem$COND)
 ?plot
+plot(stressandchem$PAGT,stressandchem$NH4)
+plot(stressandchem$PAGT,stressandchem$NO3)
+
