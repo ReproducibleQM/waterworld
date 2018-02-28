@@ -22,3 +22,13 @@ plot(stressandchem$PAGT,stressandchem$NH4)
 plot(stressandchem$PAGT,stressandchem$NO3)
 plot(stressandchem$PAGT,stressandchem$NO3)
 
+#Testing Assumptions
+PAGTNH4 <- lm(NH4~PAGT,data=stressandchem)
+shapiro.test(resid(PAGTNH4))
+#shapiro- higher p-values are significant
+
+PAGTNO3<- lm(NO3~PAGT,data=stressandchem)
+shapiro.test(resid(PAGTNO3))
+
+RoadCond<- lm(RDDENS~COND, data=stressandchem)
+shapiro.test(resid(RoadCond))
