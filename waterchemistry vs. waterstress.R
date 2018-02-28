@@ -9,3 +9,5 @@ watershedstress<-read.csv(file="wsamarch2_2009/watershedstressor.csv")
 plot("PAGT~xwatershedstress")
 ?merge
 stressandchem<- merge(watershedstress,waterchem)
+plot(stressandchem$PAGT,stressandchem$NH4)
+plot(stressandchem$PAGT,stressandchem$NO3)
