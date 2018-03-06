@@ -30,11 +30,27 @@ shapiro.test(resid(PAGTNH4))
 PAGTNO3<- lm(NO3~PAGT,data=stressandchem)
 shapiro.test(resid(PAGTNO3))
 
-<<<<<<< HEAD
+
 #Testing Assumptions
 PAGTNH4 <- lm(NH4~PAGT,data=stressandchem)
 shapiro.test(resid(PAGTNH4))
-=======
+
 RoadCond<- lm(RDDENS~COND, data=stressandchem)
 shapiro.test(resid(RoadCond))
->>>>>>> 5ddb06e9fbe40129676a67810ef38863fa5494f6
+
+#calls ggplot
+library(ggplot2)
+#Example graph
+pal<-c("#ffffb2")
+shape1<-c(21)
+Nitrogengraph<-ggplot(stressandchem, aes(NH4,NO3))+
+  geom_point(colour="black",size=4,fill=pal,pch=shape1)+
+  scale_shape_manual(values=shape1)+    
+  scale_fill_manual(values=pal)+
+  theme_bw(base_size=20)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
+  xlab("\nNH4")+
+  ylab("NO3")
+#Call the graph
+Nitrogengraph
