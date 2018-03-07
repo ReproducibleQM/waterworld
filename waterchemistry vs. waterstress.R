@@ -91,16 +91,20 @@ CabyWSsize<-ggplot(stressandchem, aes(LANDAREA,CA))+
 #Call graph
 CabyWSsize
 
-#function to pull regression text out
+#Function to pull regression text out
 lm_eqn<-function(df){
   m<-lm(y~x,df)
-  eq<-substitute(italic(y)==a+b %.% italic(x)*","~~italic(r)^2~"="~r2,
-                 list(a=format(coef(m)[1],digits=2),
-                      b=format(coef(m)[2],digits=2),
-                      r2=format(summary(m)$r.squared,digits=3)))
+  eq<-substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,
+                 list(a = format(coef(m)[1], digits = 2),
+                      b = format(coef(m)[2], digits = 2),
+                      r2 = format(summary(m)$r.squared,digits=3)))
   as.character(as.expression(eq))
 }
+
 #Ca vs. Mg?
+library(ggplot2)
+df<-stressandchem[,c("CA","MG")]
+names(df)<-c("x","y")
 pal<-c("#ffffb2")
 shape1<-c(21)
 CaMg<-ggplot(stressandchem, aes(CA,MG))+
@@ -117,3 +121,4 @@ CaMg<-ggplot(stressandchem, aes(CA,MG))+
 
 #Call graph
 CaMg
+
