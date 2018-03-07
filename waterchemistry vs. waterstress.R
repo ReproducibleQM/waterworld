@@ -91,6 +91,15 @@ CabyWSsize<-ggplot(stressandchem, aes(LANDAREA,CA))+
 #Call graph
 CabyWSsize
 
+#function to pull regression text out
+lm_eqn<-function(df){
+  m<-lm(y~x,df)
+  eq<-substitute(italic(y)==a+b %.% italic(x)*","~~italic(r)^2~"="~r2,
+                 list(a=format(coef(m)[1],digits=2),
+                      b=format(coef(m)[2],digits=2),
+                      r2=format(summary(m)$r.squared,digits=3)))
+  as.character(as.expression(eq))
+}
 #Ca vs. Mg?
 pal<-c("#ffffb2")
 shape1<-c(21)
@@ -101,6 +110,8 @@ CaMg<-ggplot(stressandchem, aes(CA,MG))+
   theme_bw(base_size=20)+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
   guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
+  geom_text(x=50,y=17000,label=lm_eqn(df),parse=TRUE)+
+  geom_smooth(method=lm,col="firebrick",se=FALSE)+
   xlab("\nCa")+
   ylab("Mg")
 
