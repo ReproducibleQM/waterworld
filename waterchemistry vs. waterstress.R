@@ -243,4 +243,23 @@ pdf("ROADSTURB.pdf",height=6,width=8)
 ROADSTURB
 dev.off()
 
+#Since the linear regression doesn't fit, try a Poisson- this code still needs work
+modelP<-glm(RDDENS ~ TURB, data=stressandchem, poisson)
+summary(modelP)
 
+
+df<-stressandchem[,c("RDDENS","TURB")]
+names(df)<-c("x","y")
+pal<-c("#ffffb2")
+shape1<-c(21)
+ROADSTURB<-ggplot(stressandchem, aes(RDDENS,TURB))+
+  geom_point(colour="black",size=4,fill=pal,pch=shape1)+
+  scale_shape_manual(values=shape1)+    
+  scale_fill_manual(values=pal)+
+  theme_bw(base_size=20)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
+  geom_text(x=5,y=4000,label=lm_eqn(df),parse=TRUE)+
+  geom_smooth(method=lm,col="firebrick",se=FALSE)+
+  xlab("Road Density")+
+  ylab("Turbidity")
