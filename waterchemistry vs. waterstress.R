@@ -32,3 +32,4 @@ shapiro.test(resid(PAGTNO3))
 
 RoadCond<- lm(RDDENS~COND, data=stressandchem)
 shapiro.test(resid(RoadCond))
+
