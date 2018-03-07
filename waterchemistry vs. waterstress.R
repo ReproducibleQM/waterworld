@@ -38,6 +38,8 @@ shapiro.test(resid(PAGTNH4))
 RoadCond<- lm(RDDENS~COND, data=stressandchem)
 shapiro.test(resid(RoadCond))
 
+<<<<<<< HEAD
+=======
 #calls ggplot
 library(ggplot2)
 #Example graph
@@ -54,4 +56,8 @@ Nitrogengraph<-ggplot(stressandchem, aes(NH4,NO3))+
   ylab("NO3")
 #Call the graph
 Nitrogengraph
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3519ef77dec07bc32564889a382f4a5c2d4a765f
+>>>>>>> 455a4199ec7f6d0800f5fa398a90d39a2e3b1087
