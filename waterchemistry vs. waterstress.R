@@ -76,6 +76,7 @@ AgbyWSsize<-ggplot(stressandchem, aes(LANDAREA,PAGT))+
 AgbyWSsize
 
 #Watershed size vs. Ca?
+
 pal<-c("#ffffb2")
 shape1<-c(21)
 CabyWSsize<-ggplot(stressandchem, aes(LANDAREA,CA))+
@@ -114,11 +115,115 @@ CaMg<-ggplot(stressandchem, aes(CA,MG))+
   theme_bw(base_size=20)+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
   guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
-  geom_text(x=50,y=17000,label=lm_eqn(df),parse=TRUE)+
+  geom_text(x=5000,y=17000,label=lm_eqn(df),parse=TRUE)+
   geom_smooth(method=lm,col="firebrick",se=FALSE)+
   xlab("\nCa")+
   ylab("Mg")
 
 #Call graph
 CaMg
+
+#save to PDF
+pdf("CaMg.pdf",height=6,width=8)
+dev.off()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Road Density vs. Turbidity 
+pal<-c("#ffffb2")
+shape1<-c(21)
+ROADSTURB<-ggplot(stressandchem, aes(RDDENS,TURB))+
+  geom_point(colour="black",size=4,fill=pal,pch=shape1)+
+  scale_shape_manual(values=shape1)+    
+  scale_fill_manual(values=pal)+
+  theme_bw(base_size=20)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
+  geom_text(x=50,y=17000,label=lm_eqn(df),parse=TRUE)+
+  geom_smooth(method=lm,col="firebrick",se=FALSE)+
+  xlab("Road Density")+
+  ylab("Turbidity")
+
+#Call graph
+ROADSTURB
+
 
