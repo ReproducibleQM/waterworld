@@ -58,3 +58,35 @@ Nitrogengraph
 #save to PDF
 pdf("Nitrogengraph.pdf",height = 6,width = 8)
 dev.off()
+
+#Watershed size vs. % ag?
+pal<-c("#ffffb2")
+shape1<-c(21)
+AgbyWSsize<-ggplot(stressandchem, aes(LANDAREA,PAGT))+
+  geom_point(colour="black",size=4,fill=pal,pch=shape1)+
+  scale_shape_manual(values=shape1)+    
+  scale_fill_manual(values=pal)+
+  theme_bw(base_size=20)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
+  xlab("\nLand area")+
+  ylab("% Ag")
+
+#Call graph
+AgbyWSsize
+
+#Watershed size vs. Ca?
+pal<-c("#ffffb2")
+shape1<-c(21)
+CabyWSsize<-ggplot(stressandchem, aes(LANDAREA,CA))+
+  geom_point(colour="black",size=4,fill=pal,pch=shape1)+
+  scale_shape_manual(values=shape1)+    
+  scale_fill_manual(values=pal)+
+  theme_bw(base_size=20)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
+  xlab("\nLand area")+
+  ylab("Ca")
+
+#Call graph
+CabyWSsize
