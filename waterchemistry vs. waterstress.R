@@ -54,3 +54,4 @@ Nitrogengraph<-ggplot(stressandchem, aes(NH4,NO3))+
   ylab("NO3")
 #Call the graph
 Nitrogengraph
+
