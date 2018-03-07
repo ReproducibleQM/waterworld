@@ -211,6 +211,16 @@ dev.off()
 
 
 #Road Density vs. Turbidity 
+lm_eqn<-function(df){
+  m<-lm(y~x,df)
+  eq<-substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,
+                 list(a = format(coef(m)[1], digits = 2),
+                      b = format(coef(m)[2], digits = 2),
+                      r2 = format(summary(m)$r.squared,digits=3)))
+  as.character(as.expression(eq))
+}
+df<-stressandchem[,c("RDDENS","TURB")]
+names(df)<-c("x","y")
 pal<-c("#ffffb2")
 shape1<-c(21)
 ROADSTURB<-ggplot(stressandchem, aes(RDDENS,TURB))+
@@ -220,12 +230,17 @@ ROADSTURB<-ggplot(stressandchem, aes(RDDENS,TURB))+
   theme_bw(base_size=20)+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
   guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
-  geom_text(x=50,y=17000,label=lm_eqn(df),parse=TRUE)+
+  geom_text(x=5,y=4000,label=lm_eqn(df),parse=TRUE)+
   geom_smooth(method=lm,col="firebrick",se=FALSE)+
   xlab("Road Density")+
   ylab("Turbidity")
 
 #Call graph
 ROADSTURB
+
+#save to PDF
+pdf("ROADSTURB.pdf",height=6,width=8)
+ROADSTURB
+dev.off()
 
 
