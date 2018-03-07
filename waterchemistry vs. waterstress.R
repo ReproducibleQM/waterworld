@@ -57,6 +57,7 @@ Nitrogengraph<-ggplot(stressandchem, aes(NH4,NO3))+
 Nitrogengraph
 #save to PDF
 pdf("Nitrogengraph.pdf",height = 6,width = 8)
+Nitrogengraph
 dev.off()
 
 #Watershed size vs. % ag?
