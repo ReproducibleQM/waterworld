@@ -90,3 +90,19 @@ CabyWSsize<-ggplot(stressandchem, aes(LANDAREA,CA))+
 
 #Call graph
 CabyWSsize
+
+#Ca vs. Mg?
+pal<-c("#ffffb2")
+shape1<-c(21)
+CaMg<-ggplot(stressandchem, aes(CA,MG))+
+  geom_point(colour="black",size=4,fill=pal,pch=shape1)+
+  scale_shape_manual(values=shape1)+    
+  scale_fill_manual(values=pal)+
+  theme_bw(base_size=20)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
+  xlab("\nCa")+
+  ylab("Mg")
+
+#Call graph
+CaMg
