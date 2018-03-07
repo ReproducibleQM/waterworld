@@ -115,7 +115,7 @@ CaMg<-ggplot(stressandchem, aes(CA,MG))+
   theme_bw(base_size=20)+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
   guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
-  geom_text(x=5000,y=17000,label=lm_eqn(df),parse=TRUE)+
+  geom_text(x=10000,y=17000,label=lm_eqn(df),parse=TRUE)+
   geom_smooth(method=lm,col="firebrick",se=FALSE)+
   xlab("\nCa")+
   ylab("Mg")
@@ -125,6 +125,7 @@ CaMg
 
 #save to PDF
 pdf("CaMg.pdf",height=6,width=8)
+CaMg
 dev.off()
 
 
