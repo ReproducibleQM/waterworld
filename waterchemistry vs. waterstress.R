@@ -211,6 +211,7 @@ dev.off()
 
 
 #Road Density vs. Turbidity 
+library(ggplot2)
 lm_eqn<-function(df){
   m<-lm(y~x,df)
   eq<-substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,
@@ -263,3 +264,43 @@ ROADSTURB<-ggplot(stressandchem, aes(RDDENS,TURB))+
   geom_smooth(method=lm,col="firebrick",se=FALSE)+
   xlab("Road Density")+
   ylab("Turbidity")
+
+
+#to assess percent urban area in watershed to conductivity
+df<-stressandchem[,c("PURB","COND")]
+names(df)<-c("x","y")
+pal<-c("#ffffb2")
+shape1<-c(21)
+URBANCOND<-ggplot(stressandchem, aes(PURB,COND))+
+  geom_point(colour="black",size=4,fill=pal,pch=shape1)+
+  scale_shape_manual(values=shape1)+    
+  scale_fill_manual(values=pal)+
+  theme_bw(base_size=20)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
+  geom_text(x=5,y=4000,label=lm_eqn(df),parse=TRUE)+
+  geom_smooth(method=lm,col="firebrick",se=FALSE)+
+  xlab("% Urban")+
+  ylab("Conductivity")
+
+URBANCOND
+
+
+#to assess percent urban area in watershed to nitrate
+df<-stressandchem[,c("PURB","NO3")]
+names(df)<-c("x","y")
+pal<-c("#ffffb2")
+shape1<-c(21)
+URBANNO3<-ggplot(stressandchem, aes(PURB,COND))+
+  geom_point(colour="black",size=4,fill=pal,pch=shape1)+
+  scale_shape_manual(values=shape1)+    
+  scale_fill_manual(values=pal)+
+  theme_bw(base_size=20)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
+  geom_text(x=5,y=4000,label=lm_eqn(df),parse=TRUE)+
+  geom_smooth(method=lm,col="firebrick",se=FALSE)+
+  xlab("% Urban")+
+  ylab("Nitrate")
+
+URBANNO3
