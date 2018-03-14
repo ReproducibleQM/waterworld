@@ -136,7 +136,7 @@ CaMg
 dev.off()
 
 
-
+#Now that we have imported a merged file with stream velocity, watershed stress, watershed chem, macroinvertebrate diversity and fish cover, we can look at instantaneous discharge and various ion concentrations. We can then look at those values compared to macroinvertebrate diversity data. 
 
 
 
