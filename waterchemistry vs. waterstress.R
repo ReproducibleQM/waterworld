@@ -7,10 +7,16 @@ riparian<-read.csv(file="wsamarch2_2009/riparian.csv")
 summary(riparian)
 watershedstress<-read.csv(file="wsamarch2_2009/watershedstressor.csv")
 plot("PAGT~xwatershedstress")
+fishcover<-read.csv(file="wsamarch2_2009/fishcover.csv")
+streamvelocity<-read.csv(file="wsamarch2_2009/streamvelocity.csv")
+wsa.bencnt.genus<-read.csv(file="wsamarch2_2009/wsa_benmet300_ts_final.csv")
 ?merge
 stressandchem<- merge(watershedstress,waterchem)
 plot(stressandchem$PAGT,stressandchem$NO3)
 plot(stressandchem$PAGT,stressandchem$NH4)
+coverstressandchem<-merge(stressandchem,fishcover)
+velocity.cover.stress.chem<-merge(coverstressandchem,streamvelocity)
+benthic.veloc.cover.stress.chem<-merge(velocity.cover.stress.chem,wsa.bencnt.genus)
 #Akaike information criterion plots- use this inductive method to tease apart 
 #variables and determine which explains the variation the best
 #plotting x,y from watershed stress and chem merged dataset
