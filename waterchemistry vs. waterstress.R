@@ -1,22 +1,16 @@
 #octothorpe
 #adding in csv's of useful data
 waterchem<-read.csv(file="wsamarch2_2009/waterchemistry.csv")
-summary(waterchem)
-str(waterchem)
-riparian<-read.csv(file="wsamarch2_2009/riparian.csv")
-summary(riparian)
 watershedstress<-read.csv(file="wsamarch2_2009/watershedstressor.csv")
-plot("PAGT~xwatershedstress")
 fishcover<-read.csv(file="wsamarch2_2009/fishcover.csv")
 streamvelocity<-read.csv(file="wsamarch2_2009/streamvelocity.csv")
 wsa.bencnt.genus<-read.csv(file="wsamarch2_2009/wsa_benmet300_ts_final.csv")
-?merge
 stressandchem<- merge(watershedstress,waterchem)
-plot(stressandchem$PAGT,stressandchem$NO3)
-plot(stressandchem$PAGT,stressandchem$NH4)
-coverstressandchem<-merge(stressandchem,fishcover)
-velocity.cover.stress.chem<-merge(coverstressandchem,streamvelocity)
-benthic.veloc.cover.stress.chem<-merge(velocity.cover.stress.chem,wsa.bencnt.genus)
+#Troubled merges...
+vel.stress.chem<-merge(stressandchem,streamvelocity)
+benthicstressandchem<-merge(stressandchem,wsa.bencnt.genus)
+velocity.benthic.stress.chem<-merge(benthicstressandchem,streamvelocity)
+
 #Akaike information criterion plots- use this inductive method to tease apart 
 #variables and determine which explains the variation the best
 #plotting x,y from watershed stress and chem merged dataset
@@ -312,3 +306,6 @@ URBANNO3<-ggplot(stressandchem, aes(PURB,COND))+
   ylab("Nitrate")
 
 URBANNO3
+
+#Analysis to run: DO vs % urban, ag, temp, ions that influence DO?, macro diversity, EPT abundance
+
