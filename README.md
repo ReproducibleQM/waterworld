@@ -29,4 +29,4 @@ More information:
 
 A data dictionary (sometimes used interchangeably with "codebook") is another text file for defining field names and values. The file includes a list of all field names in the data set and a description of each such as: units of measurement, formulas used for calculation, abbreviations, value ranges, as well as the relationship of fields to one another.
 
-
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Waterworld</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/ReproducibleQM/waterworld" property="cc:attributionName" rel="cc:attributionURL">Mitchell, Ruhm, Bahlai, Shaw, and Stoll</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
