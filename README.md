@@ -2,7 +2,7 @@
 This is the repository for the National Aquatic Resource Survey Study.
 Data can be found here: https://www.epa.gov/national-aquatic-resource-surveys/data-national-aquatic-resource-surveys
 
-This project is a collaborative project by Wes Mitchell, Caytie Ruhm, Meaghan Shaw and Jordyn Stoll. 
+This project is a collaborative project by Wes Mitchell, Catherine Ruhm, Meaghan Shaw and Jordyn Stoll. 
 
 The National Aquatic Resource Survey (NARS) assess water bodies throughout the US for physical, chemical and biological variables. This program was started to assess the condition of our water resources with respect to the Clean Water Act. More information about the goals of the program can be found here: https://www.epa.gov/national-aquatic-resource-surveys/background-national-aquatic-resource-surveys. 
 The data collected includes essentially everything about the roughly 15,000 sample sites in the US, from land cover to water chemistry, to biological assays. We plan to use this national data set to understand how a land cover attribute impacts water quality, which then impacts the biotic components. This data does not have a known DOI but is freely available at: https://www.epa.gov/national-aquatic-resource-surveys/data-national-aquatic-resource-surveys. Other scientists have used this data for publications, which can be found here: https://www.epa.gov/national-aquatic-resource-surveys/journal-articles-applying-national-aquatic-resource-survey-data#Rivers%20and%20Streams. 
