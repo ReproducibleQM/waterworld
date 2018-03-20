@@ -17,7 +17,7 @@ Place of data publication: https://www.epa.gov/national-aquatic-resource-surveys
 
 Data collection process: Varies by data set.
 
-Data processing: Open Refine, excel processing, 
+Data processing: Open Refine, MS Excel processing, 
 
 Data file type: comma separated values readable by any type of technology.
 
