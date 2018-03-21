@@ -1,16 +1,16 @@
 #octothorpe
 #adding in csv's of useful data
 waterchem<-read.csv(file="wsamarch2_2009/waterchemistry.csv")
-summary(waterchem)
-str(waterchem)
-riparian<-read.csv(file="wsamarch2_2009/riparian.csv")
-summary(riparian)
 watershedstress<-read.csv(file="wsamarch2_2009/watershedstressor.csv")
-plot("PAGT~xwatershedstress")
-?merge
+fishcover<-read.csv(file="wsamarch2_2009/fishcover.csv")
+streamvelocity<-read.csv(file="wsamarch2_2009/streamvelocity.csv")
+wsa.bencnt.genus<-read.csv(file="wsamarch2_2009/wsa_benmet300_ts_final.csv")
 stressandchem<- merge(watershedstress,waterchem)
-plot(stressandchem$PAGT,stressandchem$NO3)
-plot(stressandchem$PAGT,stressandchem$NH4)
+#Troubled merges...
+vel.stress.chem<-merge(stressandchem,streamvelocity)
+benthicstressandchem<-merge(stressandchem,wsa.bencnt.genus)
+velocity.benthic.stress.chem<-merge(benthicstressandchem,streamvelocity)
+
 #Akaike information criterion plots- use this inductive method to tease apart 
 #variables and determine which explains the variation the best
 #plotting x,y from watershed stress and chem merged dataset
@@ -130,6 +130,8 @@ CaMg
 dev.off()
 
 
+#Now that we have imported a merged file with stream velocity, watershed stress, watershed chem, macroinvertebrate diversity and fish cover, we can look at instantaneous discharge and various ion concentrations. We can then look at those values compared to macroinvertebrate diversity data. 
+
 
 
 
@@ -211,6 +213,7 @@ dev.off()
 
 
 #Road Density vs. Turbidity 
+library(ggplot2)
 lm_eqn<-function(df){
   m<-lm(y~x,df)
   eq<-substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,
@@ -243,4 +246,66 @@ pdf("ROADSTURB.pdf",height=6,width=8)
 ROADSTURB
 dev.off()
 
+#Since the linear regression doesn't fit, try a Poisson- this code still needs work
+modelP<-glm(RDDENS ~ TURB, data=stressandchem, poisson)
+summary(modelP)
+
+
+df<-stressandchem[,c("RDDENS","TURB")]
+names(df)<-c("x","y")
+pal<-c("#ffffb2")
+shape1<-c(21)
+ROADSTURB<-ggplot(stressandchem, aes(RDDENS,TURB))+
+  geom_point(colour="black",size=4,fill=pal,pch=shape1)+
+  scale_shape_manual(values=shape1)+    
+  scale_fill_manual(values=pal)+
+  theme_bw(base_size=20)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
+  geom_text(x=5,y=4000,label=lm_eqn(df),parse=TRUE)+
+  geom_smooth(method=lm,col="firebrick",se=FALSE)+
+  xlab("Road Density")+
+  ylab("Turbidity")
+
+
+#to assess percent urban area in watershed to conductivity
+df<-stressandchem[,c("PURB","COND")]
+names(df)<-c("x","y")
+pal<-c("#ffffb2")
+shape1<-c(21)
+URBANCOND<-ggplot(stressandchem, aes(PURB,COND))+
+  geom_point(colour="black",size=4,fill=pal,pch=shape1)+
+  scale_shape_manual(values=shape1)+    
+  scale_fill_manual(values=pal)+
+  theme_bw(base_size=20)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
+  geom_text(x=5,y=4000,label=lm_eqn(df),parse=TRUE)+
+  geom_smooth(method=lm,col="firebrick",se=FALSE)+
+  xlab("% Urban")+
+  ylab("Conductivity")
+
+URBANCOND
+
+
+#to assess percent urban area in watershed to nitrate
+df<-stressandchem[,c("PURB","NO3")]
+names(df)<-c("x","y")
+pal<-c("#ffffb2")
+shape1<-c(21)
+URBANNO3<-ggplot(stressandchem, aes(PURB,COND))+
+  geom_point(colour="black",size=4,fill=pal,pch=shape1)+
+  scale_shape_manual(values=shape1)+    
+  scale_fill_manual(values=pal)+
+  theme_bw(base_size=20)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
+  geom_text(x=5,y=4000,label=lm_eqn(df),parse=TRUE)+
+  geom_smooth(method=lm,col="firebrick",se=FALSE)+
+  xlab("% Urban")+
+  ylab("Nitrate")
+
+URBANNO3
+
+#Analysis to run: DO vs % urban, ag, temp, ions that influence DO?, macro diversity, EPT abundance
 
