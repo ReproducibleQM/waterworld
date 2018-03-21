@@ -309,6 +309,13 @@ URBANNO3
 
 #Analysis to run: DO vs % urban, ag, temp, ions that influence DO?, macro diversity, EPT abundance
 
+library(AICcmodavg)
+library(car)
+library(nlme)
+library(doBy)
+library(reshape2)
+library(vegan)
+
 
 
 
