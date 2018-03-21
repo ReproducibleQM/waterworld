@@ -351,8 +351,28 @@ library(data.table)
 
 #AICc gives you the residual variation, and you choose the candidate model that gives the lowest residual variation. 
 
-#use dataset vcsb to determine the best predictor for 
+#use dataset vbsc to determine the best predictor for 
         
+#Create linear models to assess independent variables effect on dependent variables.... land use on concentrations
 
+landuseNH4<-lm(NH4~PAGT, data=vbsc, na.action=na.omit)
+plot(landuseNH4)
+
+
+
+#Model selection for M. agarici using AICc
+#Best air temperature predictor is mean temp
+#Land use predictor for NH4
+Cand.models <- list()
+Cand.models[[1]] <- lme(log(NH4+1)~I(temp_air_mean^2)+temp_air_mean+ Latitude + Longitude + dis_CPAD_meter, random = ~ 1 |site, data=sub_magarici, method="ML", na.action="na.omit")
+Cand.models[[2]] <- lme(log(avg_count_per_day+1)~I(temp_air_min^2)+temp_air_min+ Latitude + Longitude + dis_CPAD_meter, random = ~ 1 |site, data=sub_magarici, method="ML", na.action="na.omit")
+Cand.models[[3]] <- lme(log(avg_count_per_day+1)~I(temp_air_max^2)+temp_air_max+ Latitude + Longitude + dis_CPAD_meter, random = ~ 1 |site, data=sub_magarici, method="ML", na.action="na.omit")
+Cand.models[[4]] <- lme(log(avg_count_per_day+1)~1+ Latitude + Longitude + dis_CPAD_meter, random = ~ 1 |site, data=sub_magarici, method="ML", na.action="na.omit")
+Modnames <- c("mean air temp", "min air temp", "max air temp", "Null")
+
+(aict <- aictab(cand.set = Cand.models, modnames=Modnames, sort=TRUE))
+
+summary(Cand.models[[1]])
+plot(Cand.models[[1]])
 
 
