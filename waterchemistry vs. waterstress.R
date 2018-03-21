@@ -363,12 +363,14 @@ plot(landuseNH4)
 #Model selection for M. agarici using AICc
 #Best air temperature predictor is mean temp
 #Land use predictor for NH4
+#since we only have 1 or 2 data point per site, it doesn't make sense to use 'random'... 
+#x^2 + x for multiple regression
 Cand.models <- list()
-Cand.models[[1]] <- lme(log(NH4+1)~I(temp_air_mean^2)+temp_air_mean+ Latitude + Longitude + dis_CPAD_meter, random = ~ 1 |site, data=sub_magarici, method="ML", na.action="na.omit")
-Cand.models[[2]] <- lme(log(avg_count_per_day+1)~I(temp_air_min^2)+temp_air_min+ Latitude + Longitude + dis_CPAD_meter, random = ~ 1 |site, data=sub_magarici, method="ML", na.action="na.omit")
-Cand.models[[3]] <- lme(log(avg_count_per_day+1)~I(temp_air_max^2)+temp_air_max+ Latitude + Longitude + dis_CPAD_meter, random = ~ 1 |site, data=sub_magarici, method="ML", na.action="na.omit")
-Cand.models[[4]] <- lme(log(avg_count_per_day+1)~1+ Latitude + Longitude + dis_CPAD_meter, random = ~ 1 |site, data=sub_magarici, method="ML", na.action="na.omit")
-Modnames <- c("mean air temp", "min air temp", "max air temp", "Null")
+Cand.models[[1]] <- lm(log(NH4+1)~I(PAGT^2)+PAGT, data=vbsc, na.action="na.omit")
+Cand.models[[2]] <- lm(log(NH4+1)~I(PFOR^2)+PFOR, data=vbsc, na.action="na.omit")
+Cand.models[[3]] <- lm(log(NH4+1)~I(PURB^2)+PURB, data=vbsc, na.action="na.omit")
+
+Modnames <- c("%Agrculture", "%Forest", "%Urban")
 
 (aict <- aictab(cand.set = Cand.models, modnames=Modnames, sort=TRUE))
 
