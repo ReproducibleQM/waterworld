@@ -342,6 +342,9 @@ library(acs)
 library(spatial.tools)
 library(data.table)
 
+
+#AICc gives you the residual variation, and you choose the candidate model that gives the lowest residual variation. 
+#used to determine the best predictor for 
         
 
 
