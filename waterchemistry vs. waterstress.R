@@ -8,8 +8,15 @@ wsa.bencnt.genus<-read.csv(file="wsamarch2_2009/wsa_benmet300_ts_final.csv")
 stressandchem<- merge(watershedstress,waterchem)
 #Troubled merges...
 vel.stress.chem<-merge(stressandchem,streamvelocity)
-benthicstressandchem<-merge(stressandchem,wsa.bencnt.genus)
-velocity.benthic.stress.chem<-merge(benthicstressandchem,streamvelocity)
+#get rid of the date col variable, which is variable bwtween the two data frames
+stressandchem$DATE_COL<-NULL
+wsa.bencnt.genus$DATE_COL<-NULL
+#visit number is not relevant for certain parameters, so it was only measured at visit 1
+stressandchem$VISIT_NO<-NULL
+
+benthicstressandchem<-merge(stressandchem,wsa.bencnt.genus, by=c("SITE_ID", "YEAR"))
+streamvelocity$VISIT_NO<-NULL
+velocity.benthic.stress.chem<-merge(benthicstressandchem,streamvelocity, by=c("SITE_ID", "YEAR"), all.x=T)
 
 #Akaike information criterion plots- use this inductive method to tease apart 
 #variables and determine which explains the variation the best
@@ -17,7 +24,6 @@ velocity.benthic.stress.chem<-merge(benthicstressandchem,streamvelocity)
 #road miles vs. conductivity
 plot(stressandchem$RDDENS,stressandchem$COND)
 
-?plot
 plot(stressandchem$PAGT,stressandchem$NH4)
 plot(stressandchem$PAGT,stressandchem$NO3)
 plot(stressandchem$PAGT,stressandchem$NO3)
