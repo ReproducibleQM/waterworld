@@ -16,7 +16,7 @@ stressandchem$VISIT_NO<-NULL
 
 benthicstressandchem<-merge(stressandchem,wsa.bencnt.genus, by=c("SITE_ID", "YEAR"))
 streamvelocity$VISIT_NO<-NULL
-velocity.benthic.stress.chem<-merge(benthicstressandchem,streamvelocity, by=c("SITE_ID", "YEAR"), all.x=T)
+vbsc<-merge(benthicstressandchem,streamvelocity, by=c("SITE_ID", "YEAR"), all.x=T)
 
 #Akaike information criterion plots- use this inductive method to tease apart 
 #variables and determine which explains the variation the best
@@ -350,7 +350,8 @@ library(data.table)
 
 
 #AICc gives you the residual variation, and you choose the candidate model that gives the lowest residual variation. 
-#used to determine the best predictor for 
+
+#use dataset vcsb to determine the best predictor for 
         
 
 
