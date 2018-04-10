@@ -59,12 +59,12 @@ Nitrogengraph<-ggplot(stressandchem, aes(NH4,NO3))+
   guides(fill=guide_legend(title="Depth (cm)"),shape=guide_legend(title="Depth (cm)"))+
   xlab("\nNH4")+
   ylab("NO3")
-#Call the graph
-Nitrogengraph
-#save to PDF
-pdf("Nitrogengraph.pdf",height = 6,width = 8)
-Nitrogengraph
-dev.off()
+# #Call the graph
+# Nitrogengraph
+# #save to PDF
+# pdf("Nitrogengraph.pdf",height = 6,width = 8)
+# Nitrogengraph
+# dev.off()
 
 #Watershed size vs. % ag?
 pal<-c("#ffffb2")
@@ -127,13 +127,13 @@ CaMg<-ggplot(stressandchem, aes(CA,MG))+
   xlab("\nCa")+
   ylab("Mg")
 
-#Call graph
-CaMg
-
-#save to PDF
-pdf("CaMg.pdf",height=6,width=8)
-CaMg
-dev.off()
+# #Call graph
+# CaMg
+# 
+# #save to PDF
+# pdf("CaMg.pdf",height=6,width=8)
+# CaMg
+# dev.off()
 
 
 #Now that we have imported a merged file with stream velocity, watershed stress, watershed chem, macroinvertebrate diversity and fish cover, we can look at instantaneous discharge and various ion concentrations. We can then look at those values compared to macroinvertebrate diversity data. 
@@ -246,11 +246,11 @@ ROADSTURB<-ggplot(stressandchem, aes(RDDENS,TURB))+
 
 #Call graph
 ROADSTURB
-
-#save to PDF
-pdf("ROADSTURB.pdf",height=6,width=8)
-ROADSTURB
-dev.off()
+# 
+# #save to PDF
+# pdf("ROADSTURB.pdf",height=6,width=8)
+# ROADSTURB
+# dev.off()
 
 #Since the linear regression doesn't fit, try a Poisson- this code still needs work
 modelP<-glm(RDDENS ~ TURB, data=stressandchem, poisson)
