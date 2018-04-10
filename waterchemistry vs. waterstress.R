@@ -369,12 +369,12 @@ Cand.models <- list()
 Cand.models[[1]] <- lm(log(NH4+1)~I(PAGT^2)+PAGT, data=vbsc, na.action="na.omit")
 Cand.models[[2]] <- lm(log(NH4+1)~I(PFOR^2)+PFOR, data=vbsc, na.action="na.omit")
 Cand.models[[3]] <- lm(log(NH4+1)~I(PURB^2)+PURB, data=vbsc, na.action="na.omit")
-
-Modnames <- c("%Agrculture", "%Forest", "%Urban")
+Cand.models[[4]] <- lm(log(NH4+1)~PAGT, data=vbsc, na.action="na.omit")
+Modnames <- c("%Agrculture", "%Forest", "%Urban", "%Ag-linear")
 
 (aict <- aictab(cand.set = Cand.models, modnames=Modnames, sort=TRUE))
 
 summary(Cand.models[[1]])
-plot(Cand.models[[1]])
+
 
 
