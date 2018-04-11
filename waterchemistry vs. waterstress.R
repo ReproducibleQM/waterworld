@@ -18,6 +18,9 @@ benthicstressandchem<-merge(stressandchem,wsa.bencnt.genus, by=c("SITE_ID", "YEA
 streamvelocity$VISIT_NO<-NULL
 vbsc<-merge(benthicstressandchem,streamvelocity, by=c("SITE_ID", "YEAR"), all.x=T)
 
+#write to csv
+write.csv(vbsc,"VBSC.csv")
+
 #Akaike information criterion plots- use this inductive method to tease apart 
 #variables and determine which explains the variation the best
 #plotting x,y from watershed stress and chem merged dataset
@@ -377,4 +380,6 @@ Modnames <- c("%Agrculture", "%Forest", "%Urban", "%Ag-linear")
 summary(Cand.models[[1]])
 
 
-
+plot(vbsc$SITE_ID,vbsc$NH4)
+plot(vbsc$SITE_ID,vbsc$H)
+plot(vbsc$SITE_ID,vbsc$)
