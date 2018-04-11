@@ -21,6 +21,8 @@ vbsc<-merge(benthicstressandchem,streamvelocity, by=c("SITE_ID", "YEAR"), all.x=
 #write to csv
 write.csv(vbsc,"VBSC.csv")
 
+vbsc$pH<-(-1)*log10(vbsc$H)
+
 #Akaike information criterion plots- use this inductive method to tease apart 
 #variables and determine which explains the variation the best
 #plotting x,y from watershed stress and chem merged dataset
