@@ -25,6 +25,8 @@ write.csv(vbsc,"VBSC.csv")
 simpleNARS<-read.csv(file="simpleNARS.csv")
 
 simpleNARS$pH<-(-1)*log10((simpleNARS$pH)/1000000)
+summary(simpleNARS)
+
 
 #Akaike information criterion plots- use this inductive method to tease apart 
 #variables and determine which explains the variation the best
