@@ -21,7 +21,10 @@ vbsc<-merge(benthicstressandchem,streamvelocity, by=c("SITE_ID", "YEAR"), all.x=
 #write to csv
 write.csv(vbsc,"VBSC.csv")
 
-vbsc$pH<-(-1)*log10(vbsc$H)
+#pull in simpleNARS file
+simpleNARS<-read.csv(file="simpleNARS.csv")
+
+simpleNARS$pH<-(-1)*log10((simpleNARS$pH)/1000000)
 
 #Akaike information criterion plots- use this inductive method to tease apart 
 #variables and determine which explains the variation the best
