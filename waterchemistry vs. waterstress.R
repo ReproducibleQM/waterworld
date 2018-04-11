@@ -20,7 +20,7 @@ vbsc<-merge(benthicstressandchem,streamvelocity, by=c("SITE_ID", "YEAR"), all.x=
 
 #write to csv
 write.csv(vbsc,"VBSC.csv")
-
+#
 #pull in simpleNARS file
 simpleNARS<-read.csv(file="simpleNARS.csv")
 
