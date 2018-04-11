@@ -27,13 +27,17 @@ simpleNARS<-read.csv(file="simpleNARS.csv")
 simpleNARS$pH<-(-1)*log10((simpleNARS$pH)/1000000)
 summary(simpleNARS)
 
-
+#created normalized columns for data normalized by  watershed land area
 simpleNARS$NH4norm<-simpleNARS$NH4/simpleNARS$LANDAREA
 simpleNARS$pHnorm<-simpleNARS$pH/simpleNARS$LANDAREA
 simpleNARS$CONDnorm<-simpleNARS$COND/simpleNARS$LANDAREA
 simpleNARS$FLOW_m3s<-simpleNARS$FLOW_CFS/(3.28^3)
 simpleNARS$FLOWnorm<-simpleNARS$FLOW_m3s/simpleNARS$LANDAREA
+#created a column for unclassified land cover
 simpleNARS$LANDOTHER<-100-(simpleNARS$PWETL+simpleNARS$PURB+simpleNARS$PAGT+simpleNARS$PFOR)
+#deleted observations with greater than 50% unclassifed land use
+NARS <- simpleNARS[which(simpleNARS$LANDOTHER < 50),]
+summary(NARS)
 #Akaike information criterion plots- use this inductive method to tease apart 
 #variables and determine which explains the variation the best
 #plotting x,y from watershed stress and chem merged dataset
