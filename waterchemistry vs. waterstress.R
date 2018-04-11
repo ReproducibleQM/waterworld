@@ -25,6 +25,8 @@ write.csv(vbsc,"VBSC.csv")
 simpleNARS<-read.csv(file="simpleNARS.csv")
 
 simpleNARS$pH<-(-1)*log10((simpleNARS$pH)/1000000)
+summary(simpleNARS)
+
 
 simpleNARS$NH4norm<-simpleNARS$NH4/simpleNARS$LANDAREA
 simpleNARS$pHnorm<-simpleNARS$pH/simpleNARS$LANDAREA
