@@ -33,7 +33,7 @@ simpleNARS$pHnorm<-simpleNARS$pH/simpleNARS$LANDAREA
 simpleNARS$CONDnorm<-simpleNARS$COND/simpleNARS$LANDAREA
 simpleNARS$FLOW_m3s<-simpleNARS$FLOW_CFS/(3.28^3)
 simpleNARS$FLOWnorm<-simpleNARS$FLOW_m3s/simpleNARS$LANDAREA
-
+simpleNARS$LANDOTHER<-100-(simpleNARS$PWETL+simpleNARS$PURB+simpleNARS$PAGT+simpleNARS$PFOR)
 #Akaike information criterion plots- use this inductive method to tease apart 
 #variables and determine which explains the variation the best
 #plotting x,y from watershed stress and chem merged dataset
