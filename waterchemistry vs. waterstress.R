@@ -26,6 +26,11 @@ simpleNARS<-read.csv(file="simpleNARS.csv")
 
 simpleNARS$pH<-(-1)*log10((simpleNARS$pH)/1000000)
 
+simpleNARS$NH4norm<-simpleNARS$NH4/simpleNARS$LANDAREA
+simpleNARS$pHnorm<-simpleNARS$pH/simpleNARS$LANDAREA
+simpleNARS$CONDnorm<-simpleNARS$COND/simpleNARS$LANDAREA
+simpleNARS$FLOWnorm<-simpleNARS$FLOW_CFS/simpleNARS$LANDAREA
+
 #Akaike information criterion plots- use this inductive method to tease apart 
 #variables and determine which explains the variation the best
 #plotting x,y from watershed stress and chem merged dataset
@@ -385,6 +390,5 @@ Modnames <- c("%Agrculture", "%Forest", "%Urban", "%Ag-linear")
 summary(Cand.models[[1]])
 
 
-plot(vbsc$SITE_ID,vbsc$NH4)
-plot(vbsc$SITE_ID,vbsc$H)
-plot(vbsc$SITE_ID,vbsc$)
+plot(simpleNARS$SITE_ID,simpleNARS$pH)
+
