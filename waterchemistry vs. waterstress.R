@@ -31,7 +31,8 @@ summary(simpleNARS)
 simpleNARS$NH4norm<-simpleNARS$NH4/simpleNARS$LANDAREA
 simpleNARS$pHnorm<-simpleNARS$pH/simpleNARS$LANDAREA
 simpleNARS$CONDnorm<-simpleNARS$COND/simpleNARS$LANDAREA
-simpleNARS$FLOWnorm<-simpleNARS$FLOW_CFS/simpleNARS$LANDAREA
+simpleNARS$FLOW_m3s<-simpleNARS$FLOW_CFS/(3.28^3)
+simpleNARS$FLOWnorm<-simpleNARS$FLOW_m3s/simpleNARS$LANDAREA
 
 #Akaike information criterion plots- use this inductive method to tease apart 
 #variables and determine which explains the variation the best
