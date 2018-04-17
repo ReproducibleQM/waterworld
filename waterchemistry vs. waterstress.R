@@ -470,3 +470,4 @@ plot(simpleNARS$PFOR, simpleNARS$NH4norm)
 #add in 'verification' csv, merge with simpleNARS to create a subset of various regions
 verification <- read.csv("wsamarch2_2009/verification.csv")
 regionalNARS<-merge(verification,simpleNARS, by=c("SITE_ID"))
+regNARS<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG <= 50 & regionalNARS$XLON_DEG >= 65 & regionalNARS$XLON_DEG <= 125),]
