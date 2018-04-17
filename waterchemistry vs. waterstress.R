@@ -473,4 +473,7 @@ regionalNARS<-merge(verification,simpleNARS, by=c("SITE_ID"))
 regNARS<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG <= 50 & regionalNARS$XLON_DEG >= 65 & regionalNARS$XLON_DEG <= 125),]
 
 
+
+#change these for each region
+regNARS<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG <= 50 & regionalNARS$XLON_DEG >= 65 & regionalNARS$XLON_DEG <= 125),]
 #make subsets of of regions, then redo analysis to look for correlations
