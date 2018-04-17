@@ -466,3 +466,7 @@ plot(simpleNARS$PFOR, simpleNARS$pH)
 plot(simpleNARS$PFOR, simpleNARS$NH4norm)
 
 >>>>>>> b394ab8c08381e8bcf8ba0406e3a248605018e55
+
+#add in 'verification' csv, merge with simpleNARS to create a subset of various regions
+verification <- read_csv("wsamarch2_2009/verification.csv")
+regionalNARS<-merge(verification,simpleNARS, by=c("SITE_ID"))
