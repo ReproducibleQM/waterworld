@@ -417,3 +417,31 @@ plot(simpleNARS$PAGT, simpleNARS$EPT_PTAX)
 plot(simpleNARS$PAGT, simpleNARS$EPT_PIND)
 plot(simpleNARS$PAGT, simpleNARS$NH4)     
 plot(simpleNARS$PAGT, simpleNARS$pH)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#percent forest
+plot(simpleNARS$PFOR, simpleNARS$SIMPSON)
+plot(simpleNARS$PFOR, simpleNARS$EPT_PTAX)
+plot(simpleNARS$PFOR, simpleNARS$EPT_PIND)
+plot(simpleNARS$PFOR, simpleNARS$NH4)
+plot(simpleNARS$PFOR, simpleNARS$pH)
+plot(simpleNARS$PFOR, simpleNARS$NH4norm)
+
