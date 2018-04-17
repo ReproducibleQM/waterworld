@@ -399,3 +399,8 @@ summary(Cand.models[[1]])
 
 plot(simpleNARS$FLOWnorm,simpleNARS$pH)
 plot(simpleNARS$FLOWnorm,simpleNARS$NH4)
+
+plot(simpleNARS$PWETL, simpleNARS$SIMPSON)
+plot(simpleNARS$PWETL, simpleNARS$EPT_PTAX)
+plot(simpleNARS$PWETL, simpleNARS$EPT_PIND)
+plot(simpleNARS$PWETL, simpleNARS$NH4)
