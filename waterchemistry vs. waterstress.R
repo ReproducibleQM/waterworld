@@ -399,8 +399,16 @@ summary(Cand.models[[1]])
 
 plot(simpleNARS$FLOWnorm,simpleNARS$pH)
 plot(simpleNARS$FLOWnorm,simpleNARS$NH4)
-
+#percent wetland plots
 plot(simpleNARS$PWETL, simpleNARS$SIMPSON)
 plot(simpleNARS$PWETL, simpleNARS$EPT_PTAX)
 plot(simpleNARS$PWETL, simpleNARS$EPT_PIND)
 plot(simpleNARS$PWETL, simpleNARS$NH4)
+plot(simpleNARS$PWETL, simpleNARS$pH)
+#percent urban
+plot(simpleNARS$PURB, simpleNARS$SIMPSON)
+plot(simpleNARS$PURB, simpleNARS$EPT_PTAX)
+plot(simpleNARS$PURB, simpleNARS$EPT_PIND)
+plot(simpleNARS$PURB, simpleNARS$NH4)
+plot(simpleNARS$PURB, simpleNARS$pH)
+
