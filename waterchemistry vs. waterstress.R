@@ -458,12 +458,12 @@ PAGTNH4graph
 
 
 #percent forest
-plot(simpleNARS$PFOR, simpleNARS$SIMPSON)
-plot(simpleNARS$PFOR, simpleNARS$EPT_PTAX)
-plot(simpleNARS$PFOR, simpleNARS$EPT_PIND)
-plot(simpleNARS$PFOR, simpleNARS$NH4)
-plot(simpleNARS$PFOR, simpleNARS$pH)
-plot(simpleNARS$PFOR, simpleNARS$NH4norm)
+plot(regNARS$PFOR, regNARS$SIMPSON)
+plot(regNARS$PFOR, regNARS$EPT_PTAX)
+plot(regNARS$PFOR, regNARS$EPT_PIND)
+plot(regNARS$PFOR, regNARS$NH4)
+plot(regNARS$PFOR, regNARS$pH)
+plot(regNARS$PFOR, regNARS$NH4norm)
 
 
 
@@ -471,3 +471,4 @@ plot(simpleNARS$PFOR, simpleNARS$NH4norm)
 verification <- read.csv("wsamarch2_2009/verification.csv")
 regionalNARS<-merge(verification,simpleNARS, by=c("SITE_ID"))
 regNARS<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG <= 50 & regionalNARS$XLON_DEG >= 65 & regionalNARS$XLON_DEG <= 125),]
+
