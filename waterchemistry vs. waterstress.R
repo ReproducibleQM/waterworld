@@ -418,6 +418,7 @@ plot(simpleNARS$PAGT, simpleNARS$EPT_PIND)
 plot(simpleNARS$PAGT, simpleNARS$NH4)     
 plot(simpleNARS$PAGT, simpleNARS$pH)
 
+<<<<<<< HEAD
 #Pagt vs NH4
 library(ggplot2)
 pal<-c("blue")
@@ -436,3 +437,32 @@ PAGTNH4graph<-ggplot(simpleNARS, aes(PAGT,NH4))+
 PAGTNH4graph
 
 
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#percent forest
+plot(simpleNARS$PFOR, simpleNARS$SIMPSON)
+plot(simpleNARS$PFOR, simpleNARS$EPT_PTAX)
+plot(simpleNARS$PFOR, simpleNARS$EPT_PIND)
+plot(simpleNARS$PFOR, simpleNARS$NH4)
+plot(simpleNARS$PFOR, simpleNARS$pH)
+plot(simpleNARS$PFOR, simpleNARS$NH4norm)
+
+>>>>>>> b394ab8c08381e8bcf8ba0406e3a248605018e55
