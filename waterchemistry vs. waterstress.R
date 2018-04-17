@@ -29,7 +29,7 @@ summary(simpleNARS)
 
 #created normalized columns for data normalized by  watershed land area
 simpleNARS$NH4norm<-simpleNARS$NH4/simpleNARS$LANDAREA
-simpleNARS$pHnorm<-simpleNARS$pH/simpleNARS$LANDAREA
+#simpleNARS$pHnorm<-simpleNARS$pH/simpleNARS$LANDAREA
 simpleNARS$CONDnorm<-simpleNARS$COND/simpleNARS$LANDAREA
 simpleNARS$FLOW_m3s<-simpleNARS$FLOW_CFS/(3.28^3)
 simpleNARS$FLOWnorm<-simpleNARS$FLOW_m3s/simpleNARS$LANDAREA
@@ -148,7 +148,7 @@ CaMg<-ggplot(stressandchem, aes(CA,MG))+
   ylab("Mg")
 
 # #Call graph
-# CaMg
+#CaMg
 # 
 # #save to PDF
 # pdf("CaMg.pdf",height=6,width=8)
@@ -397,5 +397,5 @@ Modnames <- c("%Agrculture", "%Forest", "%Urban", "%Ag-linear")
 summary(Cand.models[[1]])
 
 
-plot(simpleNARS$SITE_ID,simpleNARS$pH)
-
+plot(simpleNARS$FLOWnorm,simpleNARS$pH)
+plot(simpleNARS$FLOWnorm,simpleNARS$NH4)
