@@ -421,9 +421,9 @@ plot(simpleNARS$PAGT, simpleNARS$pH)
 
 #Pagt vs NH4
 library(ggplot2)
-pal<-c("blue")
+pal<-c("pink")
 shape1<-c(21)
-PAGTNH4graph<-ggplot(simpleNARS, aes(PAGT,NH4))+
+PAGTNH4graph<-ggplot(regNARS, aes(PAGT,NH4))+
   geom_point(colour="black",size=4,fill=pal,pch=shape1)+
   scale_shape_manual(values=shape1)+    
   scale_fill_manual(values=pal)+
