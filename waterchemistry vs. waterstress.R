@@ -411,4 +411,9 @@ plot(simpleNARS$PURB, simpleNARS$EPT_PTAX)
 plot(simpleNARS$PURB, simpleNARS$EPT_PIND)
 plot(simpleNARS$PURB, simpleNARS$NH4)
 plot(simpleNARS$PURB, simpleNARS$pH)
-
+#percent ag
+plot(simpleNARS$PAGT, simpleNARS$SIMPSON)
+plot(simpleNARS$PAGT, simpleNARS$EPT_PTAX)
+plot(simpleNARS$PAGT, simpleNARS$EPT_PIND)
+plot(simpleNARS$PAGT, simpleNARS$NH4)     
+plot(simpleNARS$PAGT, simpleNARS$pH)
