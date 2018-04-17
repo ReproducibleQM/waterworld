@@ -417,3 +417,22 @@ plot(simpleNARS$PAGT, simpleNARS$EPT_PTAX)
 plot(simpleNARS$PAGT, simpleNARS$EPT_PIND)
 plot(simpleNARS$PAGT, simpleNARS$NH4)     
 plot(simpleNARS$PAGT, simpleNARS$pH)
+
+#Pagt vs NH4
+library(ggplot2)
+pal<-c("blue")
+shape1<-c(21)
+PAGTNH4graph<-ggplot(simpleNARS, aes(PAGT,NH4))+
+  geom_point(colour="black",size=4,fill=pal,pch=shape1)+
+  scale_shape_manual(values=shape1)+    
+  scale_fill_manual(values=pal)+
+  theme_bw(base_size=20)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  ylim(0,50)+
+  xlab("\nPAGT")+
+  ylab("NH4")
+
+# #Call graph
+PAGTNH4graph
+
+
