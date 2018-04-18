@@ -475,8 +475,11 @@ regNARS<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG 
 
 #make subsets of of regions, then redo analysis to look for correlations
 regNARS4<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG <= 37.5 & regionalNARS$XLON_DEG >= 110 & regionalNARS$XLON_DEG <= 125),]
+regNARS4$region[1:length(regNARS4[1])]<-"regNARS4"
 
 regNARS5<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG <= 37.5 & regionalNARS$XLON_DEG >= 90 & regionalNARS$XLON_DEG <= 110),]
+regNARS5$region[1:length(regNARS5[1])]<-"regNARS5"
+
 
 regNARS6<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG <= 37.5 & regionalNARS$XLON_DEG >= 65 & regionalNARS$XLON_DEG <= 90),]
 
