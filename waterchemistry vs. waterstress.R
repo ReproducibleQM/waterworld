@@ -482,8 +482,10 @@ regNARS5$region[1:length(regNARS5[1])]<-"regNARS5"
 
 
 regNARS6<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG <= 37.5 & regionalNARS$XLON_DEG >= 65 & regionalNARS$XLON_DEG <= 90),]
+regNARS6$region[1:length(regNARS6[1])]<-"regNARS6"
 
 regNARS1<-regionalNARS[which(regionalNARS$XLAT_DEG >= 37.5 & regionalNARS$XLAT_DEG <= 50 & regionalNARS$XLON_DEG >= 110 & regionalNARS$XLON_DEG <= 125),]
+regNARS1$region[1:length(regNARS1[1])]<-"regNARS1"
 
 regNARS2<-regionalNARS[which(regionalNARS$XLAT_DEG >= 37.5 & regionalNARS$XLAT_DEG <= 50 & regionalNARS$XLON_DEG >= 90 & regionalNARS$XLON_DEG <= 110),]
 regNARS2$region[1:length(regNARS2[1])]<-"regNARS2"
