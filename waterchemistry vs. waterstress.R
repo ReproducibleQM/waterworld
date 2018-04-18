@@ -576,17 +576,95 @@ plot(regNARS3$PAGT, regNARS3$NH4)
 plot(regNARS3$PAGT, regNARS3$pH)
 plot(regNARS3$PAGT, regNARS3$NH4norm)
 
+#region 4
+#percent forest
+plot(regNARS3$PFOR, regNARS3$SIMPSON)
+plot(regNARS3$PFOR, regNARS3$EPT_PTAX)
+plot(regNARS3$PFOR, regNARS3$EPT_PIND)
+plot(regNARS3$PFOR, regNARS3$NH4)
+plot(regNARS3$PFOR, regNARS3$pH)
+plot(regNARS3$PFOR, regNARS3$NH4norm)
+#percent wetland
+plot(regNARS3$PWETL, regNARS3$SIMPSON)
+plot(regNARS3$PWETL, regNARS3$EPT_PTAX)
+plot(regNARS3$PWETL, regNARS3$EPT_PIND)
+plot(regNARS3$PWETL, regNARS3$NH4)
+plot(regNARS3$PWETL, regNARS3$pH)
+plot(regNARS3$PWETL, regNARS3$NH4norm)
+#percent urban
+plot(regNARS3$PURB, regNARS3$SIMPSON)
+plot(regNARS3$PURB, regNARS3$EPT_PTAX)
+plot(regNARS3$PURB, regNARS3$EPT_PIND)
+plot(regNARS3$PURB, regNARS3$NH4)
+plot(regNARS3$PURB, regNARS3$pH)
+plot(regNARS3$PURB, regNARS3$NH4norm)
+#percent agrculture
+plot(regNARS3$PAGT, regNARS3$SIMPSON)
+plot(regNARS3$PAGT, regNARS3$EPT_PTAX)
+plot(regNARS3$PAGT, regNARS3$EPT_PIND)
+plot(regNARS3$PAGT, regNARS3$NH4)
+plot(regNARS3$PAGT, regNARS3$pH)
+plot(regNARS3$PAGT, regNARS3$NH4norm)
 
+#region 5
+#percent forest
+plot(regNARS3$PFOR, regNARS3$SIMPSON)
+plot(regNARS3$PFOR, regNARS3$EPT_PTAX)
+plot(regNARS3$PFOR, regNARS3$EPT_PIND)
+plot(regNARS3$PFOR, regNARS3$NH4)
+plot(regNARS3$PFOR, regNARS3$pH)
+plot(regNARS3$PFOR, regNARS3$NH4norm)
+#percent wetland
+plot(regNARS3$PWETL, regNARS3$SIMPSON)
+plot(regNARS3$PWETL, regNARS3$EPT_PTAX)
+plot(regNARS3$PWETL, regNARS3$EPT_PIND)
+plot(regNARS3$PWETL, regNARS3$NH4)
+plot(regNARS3$PWETL, regNARS3$pH)
+plot(regNARS3$PWETL, regNARS3$NH4norm)
+#percent urban
+plot(regNARS3$PURB, regNARS3$SIMPSON)
+plot(regNARS3$PURB, regNARS3$EPT_PTAX)
+plot(regNARS3$PURB, regNARS3$EPT_PIND)
+plot(regNARS3$PURB, regNARS3$NH4)
+plot(regNARS3$PURB, regNARS3$pH)
+plot(regNARS3$PURB, regNARS3$NH4norm)
+#percent agrculture
+plot(regNARS3$PAGT, regNARS3$SIMPSON)
+plot(regNARS3$PAGT, regNARS3$EPT_PTAX)
+plot(regNARS3$PAGT, regNARS3$EPT_PIND)
+plot(regNARS3$PAGT, regNARS3$NH4)
+plot(regNARS3$PAGT, regNARS3$pH)
+plot(regNARS3$PAGT, regNARS3$NH4norm)
 
-
-
-
-
-
-
-
-
-
+#region 6
+#percent forest
+plot(regNARS3$PFOR, regNARS3$SIMPSON)
+plot(regNARS3$PFOR, regNARS3$EPT_PTAX)
+plot(regNARS3$PFOR, regNARS3$EPT_PIND)
+plot(regNARS3$PFOR, regNARS3$NH4)
+plot(regNARS3$PFOR, regNARS3$pH)
+plot(regNARS3$PFOR, regNARS3$NH4norm)
+#percent wetland
+plot(regNARS3$PWETL, regNARS3$SIMPSON)
+plot(regNARS3$PWETL, regNARS3$EPT_PTAX)
+plot(regNARS3$PWETL, regNARS3$EPT_PIND)
+plot(regNARS3$PWETL, regNARS3$NH4)
+plot(regNARS3$PWETL, regNARS3$pH)
+plot(regNARS3$PWETL, regNARS3$NH4norm)
+#percent urban
+plot(regNARS3$PURB, regNARS3$SIMPSON)
+plot(regNARS3$PURB, regNARS3$EPT_PTAX)
+plot(regNARS3$PURB, regNARS3$EPT_PIND)
+plot(regNARS3$PURB, regNARS3$NH4)
+plot(regNARS3$PURB, regNARS3$pH)
+plot(regNARS3$PURB, regNARS3$NH4norm)
+#percent agrculture
+plot(regNARS3$PAGT, regNARS3$SIMPSON)
+plot(regNARS3$PAGT, regNARS3$EPT_PTAX)
+plot(regNARS3$PAGT, regNARS3$EPT_PIND)
+plot(regNARS3$PAGT, regNARS3$NH4)
+plot(regNARS3$PAGT, regNARS3$pH)
+plot(regNARS3$PAGT, regNARS3$NH4norm)
 
 library(cdlTools)
 library(raster)
