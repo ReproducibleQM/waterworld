@@ -668,3 +668,10 @@ plot(regNARS6$PAGT, regNARS6$NH4norm)
 
 library(cdlTools)
 library(raster)
+
+#Region 1 is pacific north west
+#Region 2 is midwest
+#Region 3 is Northeast
+#Region 4 is pacific southwest
+#Region 5 is southern midwest (think, Texas)
+#Region 6 is southeast
