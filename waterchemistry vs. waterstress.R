@@ -486,8 +486,10 @@ regNARS6<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG
 regNARS1<-regionalNARS[which(regionalNARS$XLAT_DEG >= 37.5 & regionalNARS$XLAT_DEG <= 50 & regionalNARS$XLON_DEG >= 110 & regionalNARS$XLON_DEG <= 125),]
 
 regNARS2<-regionalNARS[which(regionalNARS$XLAT_DEG >= 37.5 & regionalNARS$XLAT_DEG <= 50 & regionalNARS$XLON_DEG >= 90 & regionalNARS$XLON_DEG <= 110),]
+regNARS2$region[1:length(regNARS2[1])]<-"regNARS2"
 
 regNARS3<-regionalNARS[which(regionalNARS$XLAT_DEG >= 37.5 & regionalNARS$XLAT_DEG <= 50 & regionalNARS$XLON_DEG >= 65 & regionalNARS$XLON_DEG <= 90),]
+regNARS3$region[1:length(regNARS3[1])]<-"regNARS3"
 
 #region 1 
 #percent forest
