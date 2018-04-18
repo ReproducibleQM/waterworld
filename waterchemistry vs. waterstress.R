@@ -473,7 +473,63 @@ regionalNARS<-merge(verification,simpleNARS, by=c("SITE_ID"))
 regNARS<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG <= 50 & regionalNARS$XLON_DEG >= 65 & regionalNARS$XLON_DEG <= 125),]
 
 
-
-#change these for each region
-regNARS<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG <= 50 & regionalNARS$XLON_DEG >= 65 & regionalNARS$XLON_DEG <= 125),]
 #make subsets of of regions, then redo analysis to look for correlations
+regNARS4<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG <= 37.5 & regionalNARS$XLON_DEG >= 110 & regionalNARS$XLON_DEG <= 125),]
+
+regNARS5<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG <= 37.5 & regionalNARS$XLON_DEG >= 90 & regionalNARS$XLON_DEG <= 110),]
+
+regNARS6<-regionalNARS[which(regionalNARS$XLAT_DEG >= 25 & regionalNARS$XLAT_DEG <= 37.5 & regionalNARS$XLON_DEG >= 65 & regionalNARS$XLON_DEG <= 90),]
+
+regNARS1<-regionalNARS[which(regionalNARS$XLAT_DEG >= 37.5 & regionalNARS$XLAT_DEG <= 50 & regionalNARS$XLON_DEG >= 110 & regionalNARS$XLON_DEG <= 125),]
+
+regNARS2<-regionalNARS[which(regionalNARS$XLAT_DEG >= 37.5 & regionalNARS$XLAT_DEG <= 50 & regionalNARS$XLON_DEG >= 90 & regionalNARS$XLON_DEG <= 110),]
+
+regNARS3<-regionalNARS[which(regionalNARS$XLAT_DEG >= 37.5 & regionalNARS$XLAT_DEG <= 50 & regionalNARS$XLON_DEG >= 65 & regionalNARS$XLON_DEG <= 90),]
+
+#region 1 
+#percent forest
+plot(regNARS1$PFOR, regNARS1$SIMPSON)
+plot(regNARS1$PFOR, regNARS1$EPT_PTAX)
+plot(regNARS1$PFOR, regNARS1$EPT_PIND)
+plot(regNARS1$PFOR, regNARS1$NH4)
+plot(regNARS1$PFOR, regNARS1$pH)
+plot(regNARS1$PFOR, regNARS1$NH4norm)
+#percent wetland
+plot(regNARS1$PWETL, regNARS1$SIMPSON)
+plot(regNARS1$PWETL, regNARS1$EPT_PTAX)
+plot(regNARS1$PWETL, regNARS1$EPT_PIND)
+plot(regNARS1$PWETL, regNARS1$NH4)
+plot(regNARS1$PWETL, regNARS1$pH)
+plot(regNARS1$PWETL, regNARS1$NH4norm)
+#percent urban
+plot(regNARS1$PURB, regNARS1$SIMPSON)
+plot(regNARS1$PURB, regNARS1$EPT_PTAX)
+plot(regNARS1$PURB, regNARS1$EPT_PIND)
+plot(regNARS1$PURB, regNARS1$NH4)
+plot(regNARS1$PURB, regNARS1$pH)
+plot(regNARS1$PURB, regNARS1$NH4norm)
+#percent agrculture
+plot(regNARS1$PAGT, regNARS1$SIMPSON)
+plot(regNARS1$PAGT, regNARS1$EPT_PTAX)
+plot(regNARS1$PAGT, regNARS1$EPT_PIND)
+plot(regNARS1$PAGT, regNARS1$NH4)
+plot(regNARS1$PAGT, regNARS1$pH)
+plot(regNARS1$PAGT, regNARS1$NH4norm)
+
+#region 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+library(cdlTools)
+library(raster)
