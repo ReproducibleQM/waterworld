@@ -517,7 +517,34 @@ plot(regNARS1$PAGT, regNARS1$pH)
 plot(regNARS1$PAGT, regNARS1$NH4norm)
 
 #region 2
-
+#percent forest
+plot(regNARS2$PFOR, regNARS2$SIMPSON)
+plot(regNARS2$PFOR, regNARS2$EPT_PTAX)
+plot(regNARS2$PFOR, regNARS2$EPT_PIND)
+plot(regNARS2$PFOR, regNARS2$NH4)
+plot(regNARS2$PFOR, regNARS2$pH)
+plot(regNARS2$PFOR, regNARS2$NH4norm)
+#percent wetland
+plot(regNARS2$PWETL, regNARS2$SIMPSON)
+plot(regNARS2$PWETL, regNARS2$EPT_PTAX)
+plot(regNARS2$PWETL, regNARS2$EPT_PIND)
+plot(regNARS2$PWETL, regNARS2$NH4)
+plot(regNARS2$PWETL, regNARS2$pH)
+plot(regNARS2$PWETL, regNARS2$NH4norm)
+#percent urban
+plot(regNARS2$PURB, regNARS2$SIMPSON)
+plot(regNARS2$PURB, regNARS2$EPT_PTAX)
+plot(regNARS2$PURB, regNARS2$EPT_PIND)
+plot(regNARS2$PURB, regNARS2$NH4)
+plot(regNARS2$PURB, regNARS2$pH)
+plot(regNARS2$PURB, regNARS2$NH4norm)
+#percent agrculture
+plot(regNARS2$PAGT, regNARS2$SIMPSON)
+plot(regNARS2$PAGT, regNARS2$EPT_PTAX)
+plot(regNARS2$PAGT, regNARS2$EPT_PIND)
+plot(regNARS2$PAGT, regNARS2$NH4)
+plot(regNARS2$PAGT, regNARS2$pH)
+plot(regNARS2$PAGT, regNARS2$NH4norm)
 
 
 
