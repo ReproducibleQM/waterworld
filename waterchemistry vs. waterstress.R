@@ -546,33 +546,6 @@ plot(regNARS2$PAGT, regNARS2$NH4)
 plot(regNARS2$PAGT, regNARS2$pH)
 plot(regNARS2$PAGT, regNARS2$NH4norm)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #region 3
 #percent forest
 plot(regNARS3$PFOR, regNARS3$SIMPSON)
